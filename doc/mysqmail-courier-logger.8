@@ -1,0 +1,61 @@
+.TH mysqmail-logger 8
+.SH NAME
+mysqmail-courier-logger \- logs courier-imap traffic to a mysql database
+.SH SYNOPSIS
+.B mysqmail-courier-logger
+.I subprogram
+[
+.I args ...
+]
+.SH DESCRIPTION
+.B mysqmail-courier-logger
+reads the syslog using tail \-F, and for each dovecot lines of POP3 and IMAP
+corresponding to a disconnection, mysqmail-courier-logger writes the total
+used bandwidth corresponding to the username. Configuration is read from
+/etc/mysqmail.conf.
+
+.B mysqmail-courier-logger
+uses a table corresponding to this one:
+
+CREATE TABLE IF NOT EXISTS pop_access (
+  id varchar(32) NOT NULL default '',
+  uid int(11) NOT NULL default '65534',
+  gid int(11) NOT NULL default '65534',
+  home varchar(255) NOT NULL default '',
+  shell varchar(255) NOT NULL default '',
+  mbox_host varchar(120) NOT NULL default '',
+  crypt varchar(50) NOT NULL default '',
+  passwd varchar(50) NOT NULL default '',
+  active int(11) NOT NULL default '1',
+  start_date date NOT NULL default '0000-00-00',
+  expire_date date NOT NULL default '0000-00-00',
+  quota_size int(11) NOT NULL default '0',
+  type varchar(20) NOT NULL default 'default',
+  memo text,du bigint(20) NOT NULL default '0',
+  another_perso varchar(5) NOT NULL default 'no',
+  redirect1 varchar(255) default NULL,
+  redirect2 varchar(255) default NULL,
+  localdeliver varchar(10) NOT NULL default 'yes',
+  pop3_login_count int(9) NOT NULL default '0',
+  pop3_transfered_bytes int(14) NOT NULL default '0',
+  imap_login_count int(9) NOT NULL default '0',
+  imap_transfered_bytes int(14) NOT NULL default '0',
+  last_login int(14) NOT NULL default '0',
+  PRIMARY KEY  (id,mbox_host)
+) TYPE=MyISAM
+
+To have mysqmail-courier-logger working, you should
+have issued mkfifo /var/log/courier.fifo to create
+the fifo and use
+nohup cat /var/log/courier.fifo | /usr/bin/mysqmail-courier-logger > /dev/null 2>&1 &
+to launch it.
+
+.SH "VERSION"
+This documentation describes
+.B mysqmail-courier-logger
+version 0.1.4.
+See
+.B http://gplhost.com/softwares-mysqmail.html
+for updates.
+.SH "SEE ALSO"
+qmail-send(3), syslog(3), logger(8)

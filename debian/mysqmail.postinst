@@ -1,0 +1,63 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" != "configure" ]; then
+    exit 0
+fi
+
+PATH_CONF_FILE=/etc/mysqmail.conf
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+db_get mysqmail/conf_mysqlhost
+conf_mysql_host=$RET
+db_get mysqmail/conf_mysqllogin
+conf_mysql_login=$RET
+db_get mysqmail/conf_mysqlpass
+conf_mysql_pass=$RET
+db_get mysqmail/conf_mysqldb
+conf_mysql_db=$RET
+
+# Always delete the config file first.
+rm -f ${PATH_CONF_FILE}
+
+# Check debconf values.
+if [ -z "${conf_mysql_host}" -o -z "${conf_mysql_login}" -o -z "${conf_mysql_pass}" -o -z "${conf_mysql_db}" ] ; then
+	echo "MySQL debconf configuration missing: will silently exit now."
+	echo "Please do dpkg-reconfigure mysqmail once DTC is installed in"
+	echo "order to have mysqmail working."
+	exit 0
+fi
+
+# Make correct unix rights before writing the file
+touch ${PATH_CONF_FILE}
+chmod 0640 ${PATH_CONF_FILE}
+
+echo "#
+# This is the MySQmail config file, parsed using dotconf lib
+# Normaly, should be in /etc/mysqmail.conf
+#
+
+#
+# Mysql server connection stuff (self explanatory)
+# Do not edit: use dpkg-reconfigure mysqmail instead!
+#
+mysql_hostname "${conf_mysql_host}"
+mysql_user "${conf_mysql_login}"
+mysql_pass "${conf_mysql_pass}"
+mysql_db "${conf_mysql_db}"
+mysql_table_smtp_logs smtp_logs
+mysql_table_pop_access pop_access
+mysql_table_scoreboard email_accounting
+mysql_table_domain domain
+# In Debian, this is always to be set to /var/log/syslog
+# so don't touch it.
+syslog_file /var/log/syslog
+
+" >${PATH_CONF_FILE}
+
+#DEBHELPER#
+
+exit 0

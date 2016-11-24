@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+cd ` dirname "$0" `
+ver=`grep Version: mysqmail.spec | awk ' { print $2 } ' `
+cd ..
+echo "Compressing the MySQMail source code..."
+tar --exclude mysqmail-0.4.4/.git -czf mysqmail-$ver.tar.gz mysqmail-0.4.4
+rpmbuild -ta mysqmail-$ver.tar.gz

@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.4.2\n"
+"Report-Msgid-Bugs-To: mysqmail@packages.debian.org\n"
+"POT-Creation-Date: 2009-07-18 15:09+0800\n"
+"PO-Revision-Date: 2009-07-21 13:22-0300\n"
+"Last-Translator: Rodrigo Moglia <moglia@interatia.com>\n"
+"Language-Team: Rodrigo Moglia <moglia@interatia.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:1001
+msgid "Reuse MySQL auth information from DTC?"
+msgstr "Deseja reutilizar as informações de autenticação do DTC?"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:1001
+msgid ""
+"MySQMail can reuse the login and password that DTC will use. This way, you "
+"will not have to enter any login and passord to configure MySQMail."
+msgstr ""
+"MySQMail pode reutilizar as informações de login e senha do DTC. Desta forma "
+"você não precisa especificar login e senha diferentes para configurar o "
+"MySQMail."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:2001
+msgid "MySQL hostname:"
+msgstr "Hostname MySQL:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:2001
+msgid "Please enter the hostname or IP address of the MySQL server."
+msgstr "Por favor, informe o hostname ou endereço IP do seu servidor MySQL."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid "MySQL Login:"
+msgstr "Login MySQL:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid ""
+"Enter your MySQL login. MySQMail needs it to access to your MySQL table."
+msgstr ""
+"Informe seu login MySQL. MySQMail precisa destas informações para acessar "
+"sua tabela MySQL."
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:4001
+msgid "MySQL Password:"
+msgstr "Senha MySQL:"
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:4001
+msgid "Enter your MySQL password."
+msgstr "Informe a senha do MySQL"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:5001
+msgid "MySQL database name:"
+msgstr "Nome do banco de dados MySQL:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:5001
+msgid ""
+"MySQmail will use it to save trafic for pop3, smtp ftp, and pop3 login auth."
+msgstr ""
+"MySQmail vai usar estas informações para salvar o tráfego pop3, smtp, ftp e "
+"também informações de autenticação pop3."

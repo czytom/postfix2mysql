@@ -1,0 +1,42 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: mysqmail/conf_mysqlautoconfig
+Type: boolean
+Default: true
+_Description: Reuse MySQL authentication information from DTC?
+ MySQMail can use the same MySQL credentials as DTC.
+ .
+ If you choose this option, you will not be prompted for a login
+ and password to configure MySQMail.
+
+Template: mysqmail/conf_mysqlhost
+Type: string
+Default: localhost
+_Description: MySQL hostname:
+ Please enter the hostname or IP address of the MySQL server for MySQMail.
+
+Template: mysqmail/conf_mysqllogin
+Type: string
+Default: root
+_Description: MySQL login:
+ Please enter the MySQL login needed to create (and later, access) the MySQMail
+ database.
+
+Template: mysqmail/conf_mysqlpass
+Type: password
+_Description: MySQL password:
+ Please enter the MySQL password needed to create (and later, access) the MySQMail
+ database.
+
+Template: mysqmail/conf_mysqldb
+Type: string
+Default: dtc
+_Description: MySQL database name:
+ Please enter the name of the database where MySQMail will store its data.

@@ -1,0 +1,32 @@
+This package was debianized by Thomas Goirand <thomas@goirand.fr> on
+Sat,  9 Apr 2005 21:54:10 +0200.
+
+It was downloaded from:
+git clone http://git.gplhost.com/mysqmail.git
+
+Upstream Author:
+	Thomas Goirand <thomas@goirand.fr>
+	Damien Mascord <tusker@tusker.org>
+
+Files: *
+Copyright: (C) 2001-2008, Thomas Goirand <thomas@goirand.fr>
+	(C) 2001-2008, Damien Mascord <tusker@tusker.org>
+	(C) 2003-2008, GPLHost LLC <info@gplhost.com>
+License: LGPL-2
+
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2 of the License, or (at your option) any later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+On Debian systems, the complete text of the GNU Lesser General Public
+License (LGPL) may be found in /usr/share/common-licenses/LGPL.

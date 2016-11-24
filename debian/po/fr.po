@@ -1,0 +1,125 @@
+# Copyright (C) 2009 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Christian Perrier <bubulle@debian.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: mysqmail@packages.debian.org\n"
+"POT-Creation-Date: 2009-09-28 19:46+0200\n"
+"PO-Revision-Date: 2009-10-09 20:31+0200\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+#| msgid "Reuse MySQL auth information from DTC?"
+msgid "Reuse MySQL authentication information from DTC?"
+msgstr "Réutiliser les informations d'authentification MySQL de DTC ?"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid "MySQMail can use the same MySQL credentials as DTC."
+msgstr "MySQMail peut utiliser les mêmes identifiants MySQL que DTC."
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+#| msgid ""
+#| "MySQMail can reuse the login and password that DTC will use. This way, "
+#| "you will not have to enter any login and passord to configure MySQMail."
+msgid ""
+"If you choose this option, you will not be prompted for a login and password "
+"to configure MySQMail."
+msgstr ""
+"Si vous choisissez cette option, vous n'aurez pas à entrer un nom "
+"d'utilisateur ou un mot de passe pour configurer MySQMail."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid "MySQL hostname:"
+msgstr "Nom de l'hôte MySQL :"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+#| msgid "Please enter the hostname or IP address of the MySQL server."
+msgid ""
+"Please enter the hostname or IP address of the MySQL server for MySQMail."
+msgstr ""
+"Veuillez indiquer le nom d'hôte ou l'adresse IP du serveur MySQL pour "
+"MySQMail."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+#| msgid "MySQL Login:"
+msgid "MySQL login:"
+msgstr "Nom d'utilisateur MySQL :"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+msgid ""
+"Please enter the MySQL login needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Veuillez indiquer l'identifiant MySQL qui sera utilisé pour créer (puis "
+"ensuite utiliser) la base de données de MySQMail."
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+#| msgid "MySQL Password:"
+msgid "MySQL password:"
+msgstr "Mot de passe MySQL :"
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+msgid ""
+"Please enter the MySQL password needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Veuillez indiquer le mot de passe MySQL qui sera utilisé pour créer (puis "
+"ensuite utiliser) la base de données de MySQMail."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+msgid "MySQL database name:"
+msgstr "Nom de la base de données MySQL :"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+#| msgid "Please enter the hostname or IP address of the MySQL server."
+msgid ""
+"Please enter the name of the database where MySQMail will store its data."
+msgstr ""
+"Veuillez indiquer le nom de la base de données où MySQMail conservera ses "
+"informations."
+
+#~ msgid ""
+#~ "Enter your MySQL login. MySQMail needs it to access to your MySQL table."
+#~ msgstr ""
+#~ "Veuillez indiquer l'identifiant de l'utilisateur MySQL. MySQMail en "
+#~ "a besoin pour accéder à vos tables MySQL."
+
+#~ msgid "Enter your MySQL password."
+#~ msgstr "Entrez votre mot de passe MySQL."
+
+#~ msgid ""
+#~ "MySQmail will use it to save trafic for pop3, smtp ftp, and pop3 login "
+#~ "auth."
+#~ msgstr ""
+#~ "MySQMail l'utilisera pour sauvegarder le trafic pour le pop3, smtp, ftp, "
+#~ "et l'authentification pop3."

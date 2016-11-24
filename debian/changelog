@@ -1,0 +1,108 @@
+mysqmail (0.4.9-10.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove dependency on libdotconf1.0 as it is unneeded and blocking
+    the dotconf transistion (Closes: #733919)
+
+ -- Paul Gevers <elbrus@debian.org>  Sat, 15 Feb 2014 13:41:15 +0100
+
+mysqmail (0.4.9-5) unstable; urgency=low
+
+  * Added Debconf translations thanks to:
+  * nl: Jeroen Schot <schot@A-Eskwadraat.nl> (Closes: #685842).
+  * pl: "Michał Kułach" <michalkulach@gmail.com> (Closes: #685701).
+  * sk: Slavko <slavko@slavino.sk> (Closes: #685554).
+  * da:  Joe Dalton <joedalton2@yahoo.dk> (Closes: #659787).
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 02 Sep 2012 13:35:38 +0800
+
+mysqmail (0.4.9-4) unstable; urgency=low
+
+  * Fixed the mysqmail-dovecot-logger so that it correctly logs domain
+    names (Closes: #599570).
+  * Fixed the pid filename in mysqmail-dovecot-logger.c (Closes: #599569).
+  * Added in debian/*.init some Sould-Start: mysql, as otherwise, mysqmail
+    starts before mysqld.
+  * Now using my zigo@debian.org email for the Maintainer field.
+  * Now depends on dh_helper 7.
+  * Standards-Version is now 3.9.1.
+  * Added a debian/source/format file.
+  * Now using dh_prep instead of dh_clean -k
+  * rm -f /etc/mysqmail.conf only when purging the package (Closes: #591677)
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 07 Aug 2010 18:16:20 +0800
+
+mysqmail (0.4.9-3) unstable; urgency=low
+
+  * Maintainer scripts are now also working if DTC is not configured yet
+    (Closes: #574227).
+
+ -- Thomas Goirand <thomas@goirand.fr>  Wed, 24 Mar 2010 13:32:33 +0800
+
+mysqmail (0.4.9-2) unstable; urgency=low
+
+  * Now exiting silently if DTC is not fully configured (Closes: #566568).
+  * Swedish update for the debconf template thanks to Martin Bagge
+    <brother@bsnet.se> (Closes: #562927).
+  * Added Italian debconf translation, thanks to Vincenzo Campanella
+    <vinz65@gmail.com> (Closes: #556115).
+
+ -- Thomas Goirand <thomas@goirand.fr>  Thu, 04 Mar 2010 15:09:45 +0800
+
+mysqmail (0.4.9-1) unstable; urgency=low
+
+  * New upstream version including some corrections to the man pages.
+  * New Debian release including all the translation work. Special thanks to
+    Christian Perrier for all his translation efforts in having all Debian in
+    general, and this package today, translated in many language. Debian
+    wouldn't be what it is now without people like Christian Perrier.
+  * Added Italian debconf translation thanks Luca Monducci <luca.mo@tiscali.it>
+    (Closes: #552218).
+  * Added German debconf translation thanks to Chris Leick <c.leick@vollbio.de>
+    (Closes: #550827).
+  * Added Japanese debconf translation thanks to Hideki Yamane from the
+    Debian-JP team <henrich@debian.or.jp> (Closes: #551021).
+  * Added French debconf translation thanks to Christian Perrier
+    <bubulle@debian.org> (Closes: #550813).
+  * Added Russian debconf translation thanks to Yuri Kozlov
+    <yuray@komyakino.ru> (Closes: #550551).
+  * Added Spanish debconf translation thanks to Francisco Javier Cuadrado
+    <fcocuadrado@gmail.com> (Closes: #550501).
+  * Added Finish debconf translation thanks to Esko Arajärvi <edu@iki.fi>
+    (Closes: #549969).
+  * Added Czech debconf translation thanks to Martin Šín <martin.sin@zshk.cz>
+    (Closes: #549301).
+  * Added Vietnamese debconf translation thanks to Clytie Siddall
+    <clytie@riverland.net.au> (Closes: #548993).
+  * Added Portuguese debconf translation thanks to Rui Branco of the Traduz
+    (Portuguese Translation Team) <traduz@debianpt.org> (Closes: #548830).
+  * Added Swedish debconf translation thanks to Martin Bagge <brother@bsnet.se>
+    (Closes: #545735).
+  * Bumped Standards-Version.
+
+ -- Thomas Goirand <thomas@goirand.fr>  Fri, 16 Oct 2009 04:05:05 +0800
+
+mysqmail (0.4.8-2) unstable; urgency=low
+
+  * New templates and debian/control reviewed by the language team, thanks a
+    lot to Christian Perrier <bubulle@debian.org> for his endless efforts.
+    (Closes: #547141, #548697)
+  * Reviewed the debian/*.init for dependencies (Closes: #545897).
+
+ -- Thomas Goirand <thomas@goirand.fr>  Mon, 28 Sep 2009 17:20:57 +0800
+
+mysqmail (0.4.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated the debian/*.init scripts for correct dependencies (Closes: #545897).
+
+ -- Thomas Goirand <thomas@goirand.fr>  Thu, 10 Sep 2009 14:04:23 +0800
+
+mysqmail (0.4.7-1) unstable; urgency=low
+
+  * Initial Release (Closes: #537423).
+  * Fixed the 2 reasons of (very legitimate) rejection by FTP masters:
+    - Removed qmail-logger from built as qmail is not in main.
+    - Fixed conflicting debian/copyright and doc/LICENSE.
+
+ -- Thomas Goirand <thomas@goirand.fr>  Fri, 04 Sep 2009 16:14:36 +0800

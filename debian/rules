@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	touch $@
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	$(MAKE)
+	$(MAKE) strip
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	# Add here commands to clean up after the build process.
+	$(MAKE) clean
+
+	dh_clean 
+
+	# As per advice from Christian Perrier
+	debconf-updatepo
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	install -D -m 0755 mysqmail-courier-logger   debian/mysqmail-courier-logger/usr/sbin/mysqmail-courier-logger
+	install -D -m 0755 mysqmail-postfix-logger   debian/mysqmail-postfix-logger/usr/sbin/mysqmail-postfix-logger
+	install -D -m 0755 mysqmail-pure-ftpd-logger debian/mysqmail-pure-ftpd-logger/usr/sbin/mysqmail-pure-ftpd-logger
+	install -D -m 0755 mysqmail-dovecot-logger   debian/mysqmail-dovecot-logger/usr/sbin/mysqmail-dovecot-logger
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_link
+	dh_installchangelogs doc/changelog
+	dh_installdocs
+	dh_installmenu
+	dh_installdebconf	
+	dh_installinit
+	dh_installman
+	dh_strip
+	dh_compress
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

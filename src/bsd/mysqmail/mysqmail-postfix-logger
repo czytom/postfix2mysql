@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD: ports/local/mysqmail/files/mysqmail-postfix-logger.in$
+#
+# PROVIDE: mysqmail-postfix-logger
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mysqmail-postfix-logger
+#
+# mysqmail_postfix_logger_enable="YES"
+#
+# See perdition(8) for flags
+#
+
+mysqmail_postfix_logger_enable=${mysqmail_postfix_logger_enable-"NO"}
+
+. /etc/rc.subr
+
+name="mysqmail_postfix_logger"
+rcvar=`set_rcvar`
+required_files=/usr/local/etc/mysqmail.conf
+
+command="/usr/local/sbin/mysqmail-postfix-logger"
+pidfile="/var/run/mysqmail-postfix-logger.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

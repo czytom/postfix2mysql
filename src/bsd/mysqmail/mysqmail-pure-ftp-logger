@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD: ports/local/mysqmail/files/mysqmail-pure-ftp-logger.in$
+#
+# PROVIDE: mysqmail-pure-ftp-logger
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mysqmail-pure-ftp-logger
+#
+# mysqmail_pure_ftp_logger_enable="YES"
+#
+# See perdition(8) for flags
+#
+
+mysqmail_pure_ftp_logger_enable=${mysqmail_pure_ftp_logger_enable-"NO"}
+
+. /etc/rc.subr
+
+name="mysqmail_pure_ftp_logger"
+rcvar=`set_rcvar`
+required_files=/usr/local/etc/mysqmail.conf
+
+command="/usr/local/sbin/mysqmail-pure-ftp-logger"
+pidfile="/var/run/mysqmail-pure-ftp-logger.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

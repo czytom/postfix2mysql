@@ -1,0 +1,64 @@
+Source: mysqmail
+Section: mail
+Priority: extra
+Maintainer: Thomas Goirand <zigo@debian.org>
+Build-Depends: debhelper (>= 7), po-debconf, libdotconf-dev, libmysqlclient-dev | libmysqlclient15-dev
+Standards-Version: 3.9.1
+Vcs-Browser: http://git.gplhost.com/gitweb/?p=mysqmail.git
+Vcs-Git: http://git.gplhost.com/mysqmail.git
+Homepage: http://www.gplhost.com/software-mysqmail.html
+
+Package: mysqmail
+Architecture: all
+Depends: ${misc:Depends}, debconf, ${shlibs:Depends}
+Description: real-time logging system in MySQL
+ MySQMail is a set of tiny daemon loggers for mail and FTP servers that
+ save traffic information in a MySQL database. The information is split
+ by domain and by user so that it's easy to measure all the traffic for
+ a given domain name in real time.
+ .
+ This empty package only provides the configuration infrastructure.
+
+Package: mysqmail-pure-ftpd-logger
+Architecture: any
+Depends: ${misc:Depends}, lsb-base, pure-ftpd | pure-ftpd-mysql, mysqmail, ${shlibs:Depends}
+Description: real-time logging system in MySQL - Pure-FTPd traffic-logger
+ MySQMail is a set of tiny daemon loggers for mail and FTP servers that
+ save traffic information in a MySQL database. The information is split
+ by domain and by user so that it's easy to measure all the traffic for
+ a given domain name in real time.
+ .
+ This package provides a logger for FTP traffic handled by Pure-FTPd.
+
+Package: mysqmail-postfix-logger
+Architecture: any
+Depends: ${misc:Depends}, lsb-base, postfix, mysqmail, ${shlibs:Depends}
+Description: real-time logging system in MySQL - Postfix traffic-logger
+ MySQMail is a set of tiny daemon loggers for mail and FTP servers that
+ save traffic information in a MySQL database. The information is split
+ by domain and by user so that it's easy to measure all the traffic for
+ a given domain name in real time.
+ .
+ This package provides a logger for SMTP traffic handled by Postfix.
+
+Package: mysqmail-courier-logger
+Architecture: any
+Depends: ${misc:Depends}, courier-imap-ssl | courier-imap | courier-pop | courier-pop-ssl, lsb-base, mysqmail, ${shlibs:Depends}
+Description: real-time logging system in MySQL - Courier traffic-logger
+ MySQMail is a set of tiny daemon loggers for mail and FTP servers that
+ save traffic information in a MySQL database. The information is split
+ by domain and by user so that it's easy to measure all the traffic for
+ a given domain name in real time.
+ .
+ This package provides a logger for POP/IMAP traffic handled by Courier.
+
+Package: mysqmail-dovecot-logger
+Architecture: any
+Depends: ${misc:Depends}, dovecot-pop3d, dovecot-imapd, lsb-base, mysqmail, ${shlibs:Depends}
+Description: real-time logging system in MySQL - Dovecot traffic-logger
+ MySQMail is a set of tiny daemon loggers for mail and FTP servers that
+ save traffic information in a MySQL database. The information is split
+ by domain and by user so that it's easy to measure all the traffic for
+ a given domain name in real time.
+ .
+ This package provides a logger for POP/IMAP traffic handled by Dovecot.

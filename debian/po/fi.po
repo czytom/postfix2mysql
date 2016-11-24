@@ -1,0 +1,98 @@
+# Copyright (C) 2009
+# This file is distributed under the same license as the mysqmail package.
+#
+# Esko Arajärvi <edu@iki.fi>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: mysqmail@packages.debian.org\n"
+"POT-Creation-Date: 2009-09-28 19:46+0200\n"
+"PO-Revision-Date: 2009-10-06 21:36+0300\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid "Reuse MySQL authentication information from DTC?"
+msgstr "Käytetäänkö DTC:n MySQL-tunnistautumistietoja?"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid "MySQMail can use the same MySQL credentials as DTC."
+msgstr "MySQMail voi käyttää samoja tunnuksia kuin DTC."
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid ""
+"If you choose this option, you will not be prompted for a login and password "
+"to configure MySQMail."
+msgstr ""
+"Jos valitset tämän vaihtoehdon, sinulta ei kysytä tunnusta ja salasanaa "
+"MySQMailin asetusten tekemistä varten."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid "MySQL hostname:"
+msgstr "MySQL-verkkonimi:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid ""
+"Please enter the hostname or IP address of the MySQL server for MySQMail."
+msgstr "Anna MySQMailin käyttämän MySQL-palvelimen verkkonimi tai IP-osoite."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+msgid "MySQL login:"
+msgstr "MySQL-tunnus:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+msgid ""
+"Please enter the MySQL login needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Anna MySQL-tunnus, jota tarvitaan MySQMailin tietokannan luomiseen (ja "
+"myöhemmin sen käyttämiseen)."
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+msgid "MySQL password:"
+msgstr "MySQL-salasana:"
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+msgid ""
+"Please enter the MySQL password needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Anna MySQL-salasana, jota tarvitaan MySQMailin tietokannan luomiseen (ja "
+"myöhemmin sen käyttämiseen"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+msgid "MySQL database name:"
+msgstr "MySQL-tietokannan nimi:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+msgid ""
+"Please enter the name of the database where MySQMail will store its data."
+msgstr "Anna sen tietokannan nimi, johon MySQLMail tallentaa tietonsa."
+

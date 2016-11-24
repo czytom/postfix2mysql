@@ -1,0 +1,126 @@
+Hi folks !
+
+What does do MySQMail ?
+-----------------------
+MySQmail helps keeping all the qmail MTA login and trafic informations in a
+database, and IN REAL TIME.
+
+This tool was written mostly to work with Domain Technologie Control (DTC).
+MySQMail is not mandatory for DTC, but it's a way better to have it.
+
+I needed to have qmail accounting, so I had to write couples of binaries.
+Fortunatly qmail is modular and it's realy easy to make some add-ons. Here is
+what MySQmail package will add to qmail: pop will use MySQL backend for
+password, and both SMTP and POP will have trafic logged into MySQL by mailbox.
+
+MySQmail requipement
+--------------------
+- mysql client library and dev files
+- dotconf lib for reading conf file /etc/mysqmail.conf
+
+MySQmail binaries
+-----------------
+MySQMail is made of few binaries. It currently consists of 4 loggers that
+are all working IN REAL TIME, so you can monitor your email traffic in real
+time as well.
+
+- mysqmail-postfix-logger: A mysql logger for postfix. Reads from syslog
+  using tail -F and send corresponding results in a MySQL table, so you
+  have monthly statistics.
+
+- mysqmail-courier-logger: Seaches for POP3 / IMAP connections printed in
+  the syslog, and generate monthly traffic report in SQL.
+
+- mysqmail-dovecot-logger: Same as mysqmail-courier-logger, but for the
+  much faster dovecot daemon.
+
+- mysqmail-pure-ftpd-logger: Logs traffic from
+  /var/log/pure-ftpd/transfer.log or /var/log/pureftpd.log (which ever is
+  present in your system, the first one above having priority), using tail
+  -F, and writes a score board in MySQL.
+
+- mysqmail-qmail-logger: A mysql logger for qmail-send. It will read from
+  the syslog using tail -F, and all successfull delivery (either remote or
+  local) will generate a tiny mysql record containing remote and local user
+  and domain name.
+
+- mysqmail-checkpwd: A mysql alternative checkpassword for qmail-pop3d.
+  Reads the passwords and mailbox account infos for pop3 from a mysql db,
+  and set env variable DOMAINNAME and USER to be used for putting trafic
+  info in the DB.
+
+- mysqmail-pop3d-patch: A qmail-pop3d.c patched version of the orriginal one
+  from DJB that logs the trafic of all pop3 sessions users into the password
+  table.
+
+MySQmail config file
+--------------------
+In order to read it's /etc/mysqmail.conf config file, all of the MySQmail
+binaries uses libdotconf.
+This small library is perfect for reading one program config file, and I
+encourage all developpers to use it. It's available for all Unix and is
+compatible with config files like apache's httpd.conf.
+
+MySQmail has been written using libdotconf 1.0.9, with it's config files
+directive set as case insensitive.
+
+No need to explain the content of this config file, I suppose you know
+what is a mysql login/password...
+
+MySQail instalation
+-------------------
+Get qmail sources, apply my qmail-pop3d patch, and recopile qmail-pop3d
+binary. Don't forget that you need both mysqlclient and dotconf library
+installed in your system (and -dev or -devel flavor maybe). The provided
+Makefile only adds mysql and dotconf to linking. Install the new
+qmail-pop3d it according to your system (normaly in /var/qmail/bin).
+
+Compile and install mysqmail-checkpwd and mysqmail-logger using:
+
+> make install
+
+Edit your /etc/mysqmail.conf so all 3 binaries can log in the mysql
+server.
+
+Then edit your qmail start file so it uses the new programs for loggin.
+Note that mysqmail-logger will flush all unknown or non-trafic logs to
+standard output, so you can still keep a logfile for status/alert/etc...
+Keep the normal system logger for qmail-smptd, only qmail-send gives
+accounting informations. Change the qmail checkpasswd to the new one for
+pop3.
+
+Here is what I have on my debian machine. Note that this may differ on
+some other system, aspecialy if you are using the svscan (daemontools)
+stuff, but it's by the way a good example.
+
+sh -c "start-stop-daemon --start --quiet --user qmails \
+ --exec /usr/sbin/qmail-send \
+ --startas /usr/sbin/qmail-start -- \"Maildir\" \
+ /usr/sbin/mysqmail-logger >>/var/log/qmail.log &"
+
+sh -c "start-stop-daemon --start --quiet --user root \
+ --exec /usr/bin/tcpserver -v -- \
+ 0 pop-3 /usr/sbin/qmail-popup `hostname` \
+ /usr/sbin/mysqmail-checkpwd /usr/sbin/qmail-pop3d Maildir
+
+The POP MySQL Database
+----------------------
+Be sure that you have your tables corresponding to the ones described in the
+*.sql scripts. Remember that because of virtual domains support, pop3 logins
+will be of the style "user@host.com" (and NOT simply "user").
+
+Credit
+------
+All code and patch done by Thomas GOIRAND <thomas@goirand.fr>
+
+Mysql password check code was written reading the code from Jedi's alternative
+checklocalpwd programm. Thanks him for that good example and usefull auth.
+Mysql logger was written from scratch.
+
+Message to DJB
+--------------
+On next version, please add login & traffic log to your pop3d. Please include
+all the good ideas other developpers have add to your software and release a
+toaster with more options. Why don't you release something with all options
+(relay control, SSL, password auths, spam prevention, etc...) BUT configurable
+with some simple config files ?

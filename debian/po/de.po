@@ -1,0 +1,104 @@
+# Translation of mysqmail to German
+# Copyright (C) 2001-2008, Thomas Goirand <thomas@goirand.fr>,
+# 2001-2008 Damien Mascord <tusker@tusker.org>,
+# 2003-2008 GPLHost LLC <info@gplhost.com>.
+# This file is distributed under the same license as the mysqmail package.
+# Chris Leick <c.leick@vollbio.de>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mysqmail 0.4.7-1\n"
+"Report-Msgid-Bugs-To: mysqmail@packages.debian.org\n"
+"POT-Creation-Date: 2009-07-18 15:09+0800\n"
+"PO-Revision-Date: 2009-10-12 17:31+0100\n"
+"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid "Reuse MySQL authentication information from DTC?"
+msgstr "MySQL-Authentifizierungsinformationen von DTC wiederverwenden?"
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid "MySQMail can use the same MySQL credentials as DTC."
+msgstr ""
+"MySQMail kann die gleichen MySQL-Zugangsberechtigungen wie DTC verwenden."
+
+#. Type: boolean
+#. Description
+#: ../mysqmail.templates:2001
+msgid ""
+"If you choose this option, you will not be prompted for a login and password "
+"to configure MySQMail."
+msgstr ""
+"Wenn Sie diese Option wählen, werden Sie bei der Einrichtung von MySQMail "
+"nicht nach einem Anmeldenamen und einem Passwort gefragt."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid "MySQL hostname:"
+msgstr "MySQL-Rechnername:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:3001
+msgid ""
+"Please enter the hostname or IP address of the MySQL server for MySQMail."
+msgstr ""
+"Bitte geben Sie den Rechnernamen oder die IP-Adresse des MySQL-Servers "
+"für MySQMail ein."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+msgid "MySQL login:"
+msgstr "MySQL-Anmeldename:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:4001
+msgid ""
+"Please enter the MySQL login needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Geben Sie den MySQL-Anmeldenamen ein, der benötigt wird, um die "
+"MySQMail-Datenbank anzulegen (und später darauf zuzugreifen)."
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+msgid "MySQL password:"
+msgstr "MySQL-Passwort:"
+
+#. Type: password
+#. Description
+#: ../mysqmail.templates:5001
+msgid ""
+"Please enter the MySQL password needed to create (and later, access) the "
+"MySQMail database."
+msgstr ""
+"Geben Sie das MySQL-Passwort ein, das benötigt wird, um die "
+"MySQMail-Datenbank anzulegen (und später darauf zuzugreifen)."
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+msgid "MySQL database name:"
+msgstr "MySQL-Datenbankname:"
+
+#. Type: string
+#. Description
+#: ../mysqmail.templates:6001
+msgid ""
+"Please enter the name of the database where MySQMail will store its data."
+msgstr ""
+"Bitte geben Sie den Namen der Datenbank ein, in der MySQMail seine Daten "
+"speichern wird."

@@ -1,0 +1,19 @@
+07-09-2009:
+- Full rewrite of all parsers, much more stable
+- Now piping using tail -f to avoid silly fifo
+- Read daemon using fork at startup
+- Creates pid files
+- Has a RPM port
+
+21-11-2006:
+Created a unique source package for Debian.
+
+21-02-2005:
+splitted mysqmail into different packages.
+
+Old version:
+Hi folks !
+
+Enjoy tranfic accouting now !
+
+Thomas GOIRAND <thomas@goirand.fr>

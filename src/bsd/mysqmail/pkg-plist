@@ -1,0 +1,7 @@
+sbin/mysqmail-courier-logger
+sbin/mysqmail-postfix-logger
+sbin/mysqmail-dovecot-logger
+sbin/mysqmail-pure-ftpd-logger
+@unexec if cmp -s %D/etc/mysqmail.conf.sample %D/etc/mysqmail.conf; then rm -f %D/etc/mysqmail.conf; fi
+etc/mysqmail.conf.sample
+@exec if [ ! -f %D/etc/mysqmail.conf ] ; then cp -p %D/%F %B/mysqmail.conf; fi

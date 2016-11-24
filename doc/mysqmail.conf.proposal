@@ -1,0 +1,32 @@
+#
+# This is the MySQmail config file, parsed using dotconf lib
+# Normaly, should be in /etc/mysqmail.conf
+#
+
+#
+# Mysql server connection stuff (self explanatory)
+#
+
+mysql_hostname localhost
+mysql_user root
+mysql_pass XXXXXX
+mysql_db dtc
+mysql_table_smtp_logs smtp_logs
+mysql_table_pop_access pop_access
+syslog_file /var/log/maillog
+#
+# mysqmail-logger options (not used for the moment
+#
+
+# If set to yes, then you can use multilog or syslog piped after mysqmail-logger
+logger_forward_to_stdout yes
+
+# If set to yes, start msg/info msg/starting delivery/delivery/bounce &
+# tripple bounce will not be forwarded to stdout, so you get only
+# serious/errors debuggin informations logged to file
+logger_forward_only_unknown yes
+
+# If set to yes, then all queries issued to SQL are sent to stdout for
+# debugging purpose
+logger_queries_to_stdout no
+
